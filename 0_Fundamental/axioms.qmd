@@ -1,0 +1,49 @@
+---
+title: Axioms
+term-aliases:
+  - alias: associativity
+    id: associativity
+  - alias: identity
+    id: identity
+  - alias: inverse
+    id: inverse
+  - alias: unique inverse
+    id: uniqueInverse
+macros:
+  - command: "N"
+    description: "The Natural Numbers: $1, 2, 3, ...$"
+    macro: '\\mathbb{N}'
+  - command: Inverse
+    macro: '{#1}^{-1}'
+    variables: 1
+  - command: Set
+    macro: '{S}'
+  - command: Operation
+    macro: '{#1}\\cdot{#2}'
+    variables: 2
+  - command: Identity
+    macro: '{e}'
+embedMap: [\Set,\Operation,\Identity]
+---
+
+::: {#def-associativity}
+## associativity
+
+For all ${#1},{#2},{#3}$ in $\Set$, one has $\Operation{(\Operation{#1}{#2})}{#3}=\Operation{#1}{(\Operation{#2}{#3})}$.
+:::
+
+::: {#def-identity}
+## identity
+There exists an element $\Identity$ in $\Set$ such that, for every ${#1}$ in $\Set$, one has $\Operation{\Identity}{#1}={#1}$ and $\Operation{#1}{\Identity}={#1}$. Such an element is unique and is called the **identity element**.
+:::
+
+:::: {#def-uniqueInverse}
+
+::: {#def-inverse}
+## inverse
+For each ${#1}$ in $\Set$, there exists an element ${#2}$ in $\Set$ such that $\Operation{#1}{#2}=\Identity$ and $\Operation{#2}{#1}=\Identity$, where $\Identity$ is the identity element.
+:::
+
+For each ${#1}$, the element ${#2}$ is unique and is called the **inverse** of ${#2}$ and is denoted $\Inverse{#1}$.
+::::
+

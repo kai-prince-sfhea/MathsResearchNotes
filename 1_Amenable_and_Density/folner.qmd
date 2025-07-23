@@ -1,0 +1,56 @@
+---
+title: Følner sequence
+term-aliases:
+  - alias: Følner
+    id: Folner
+    translate: false
+  - alias: right-Følner
+    id: rightFolner
+  - alias: left-Følner
+    id: leftFolner
+  - prefix: tempered
+    id: tempered
+macros:
+  - command: Folner
+    macro: '{\\Phi}_{#1}'
+    variables: 1
+    variablesDefault: '\\vphantom{}'
+dependencies:
+  - group
+---
+
+# Følner Sequences
+
+::: {#def-rightFolner}
+We define a *right-Følner sequence* in $\Group$ as a sequence $\Folner =(\Folner[N])_{N\in\mathbb{N}}$ of finite subsets of $\Gamma$ satisfying $$\lim_{N\rightarrow\infty}\frac{|\GroupOperation{(\GroupOperation{\Folner[N]}{\Inverse{\GroupElement}})}{\Folner[N]}|}{|\Folner[N]|}=1$$for all $\GroupElement\in\Group$.
+:::
+
+::: {#def-leftFolner}
+Similarly, we define a *left-Følner sequence* in $\Group$ as a sequence $\Folner =(\Folner[N])_{N\in\mathbb{N}}$ of finite subsets of $\Gamma$ satisfying $$\lim_{N\rightarrow\infty}\frac{|(\Inverse{\GroupElement}\cdot\Folner[N])\cap\Folner[N]|}{|\Folner[N]|}=1 $$for all $\GroupElement\in\Group$.
+:::
+
+::: {#def-Folner}
+We call a sequence a *Følner sequence* if it is both a left and right Følner sequence.
+:::
+
+# Tempered Følner Sequences
+
+::: {#def-tempered}
+## @Lindenstrauss2001PETAmenable [Definition 1.1]
+
+A sequence of sets $\Phi=(\Phi_N)_{N\in\mathbb{N}}$ will be said to be *tempered* if, for some $b>0$ and all $n\in\mathbb{N}$,
+
+$$
+\left|\bigcup_{1\leq k<n}\Phi_k^{-1}\Phi_n \right|\leq b|\Phi_N|.
+$$ {#eq-Shulman}
+
+is referred to as the *Shulman condition*.
+:::
+
+::: {#prp-temperedFolner}
+## @Lindenstrauss2001PETAmenable [Proposition 1.4]
+
+1. Every Følner sequence $\Phi=(\Phi_N)_{N\in\mathbb{N}}$ has a tempered subsequence.
+2. Every amenable group has a tempered Følner sequence.
+:::
+

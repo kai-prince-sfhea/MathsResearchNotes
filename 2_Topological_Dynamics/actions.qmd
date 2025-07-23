@@ -1,0 +1,26 @@
+---
+title: Actions
+macros:
+  - command: GroupAction
+    macro: '{#1}.{#2}'
+    variables: 2
+dependencies:
+  - group
+---
+
+::: {#def-action}
+## @Bekka2000GroupActionDynamics [Chapter II Section 2]
+
+An *action* of a group, $\Group$, on a measurable space $(X,\mathscr{B})$ is a measurable mapping
+$$\Group\times X\rightarrow X,\ (\GroupElement,x)\mapsto \GroupAction{\GroupElement}{x} $$
+with the following properties:
+
+1. Associativity: For all $\GroupElement,\GroupElement'\in \Group,x\in X$, then $\GroupElement.(\GroupElement'.x)=\GroupAction{(\GroupOperation{\GroupElement}{\GroupElement'})}{x}$
+2. Identity: There exists an identity element $\GroupIdentity\in\Group$ such that $\GroupAction{\GroupIdentity}{x}=x$ for all $x\in X$.
+3. Quasi-Invariance: For any $B\in\mathscr{B}$ and for all $\GroupElement\in\Group$, we have $\mu(\GroupAction{\GroupElement}{B})=0$ if and only if $\mu(B)=0$.
+
+The action of $\Group$ is also ergodic if it satisfies the additional property:
+
+4. If $B\in\mathscr{B}$ and $\mu(B)=\mu(\GroupAction{\GroupElement}{B})$ for any $\GroupElement\in\Group$, then $\mu(B)=0$ or $\mu(X\setminus B)=0$.
+
+:::

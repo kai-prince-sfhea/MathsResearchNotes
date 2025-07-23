@@ -1,0 +1,19 @@
+---
+title: Amenable
+term-aliases:
+  - alias: amenable
+    id: amenable
+macros:
+  - command: AmenableGroup
+    macro: '{\\Gamma}'
+  - command: AmenableGroupElement
+    macro: '{\\gamma}'
+dependencies:
+  - folner
+---
+
+::: {#def-amenable}
+
+For simplicity, we will use the alternative and equivalent definition that a group is *amenable* (and second countable) if and only if it has a Følner sequence.
+:::
+

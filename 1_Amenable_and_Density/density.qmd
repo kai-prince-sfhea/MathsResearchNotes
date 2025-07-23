@@ -1,0 +1,26 @@
+---
+title: Density
+term-aliases:
+  - alias: density
+    id: density
+dependencies:
+  - folner
+---
+
+::: {#def-density}
+
+For $A\subseteq G$ and Følner sequence $\Phi=(\Phi_N)_{n=1}^\infty$, we write
+\begin{align*}
+    \overline{d}_\Phi(A)&=\limsup_{N\rightarrow\infty}\frac{|A\cap\Phi_N|}{|\Phi_N|}
+    \\\underline{d}_\Phi(A)&=\liminf_{N\rightarrow\infty}\frac{|A\cap\Phi_N|}{|\Phi_N|}
+\end{align*}
+to be the *upper and lower densities of $A$ with respect to $\Phi$*, respectively. If these agree, then we can write
+$$
+d_\Phi(A)=\lim_{N\rightarrow\infty}\frac{|A\cap\Phi_N|}{|\Phi_N|}
+$$
+to be the *density of $A$ with respect to $\Phi$*. We also define the *upper Banach density of $A$* by
+$$
+\overline{d}(A)=\sup\{d_\Phi(A):\text{for Følner sequences }\Phi\text{ where }d_\Phi(A)\text{ exists}\}.
+$$
+:::
+
