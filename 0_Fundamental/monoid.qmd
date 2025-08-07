@@ -1,0 +1,21 @@
+---
+title: Monoid
+terms:
+    - alias: monoid
+macros:
+  - command: Monoid
+    macro: '{M}'
+  - command: MonoidOperation
+    macro: '{#1}\\cdot{#2}'
+    variables: 2
+  - command: MonoidIdentity
+    macro: '{e}'
+  - command: MonoidElement
+    macro: '{g}'
+dependencies:
+  - axioms
+---
+
+::: {#prp-HaarCounting}
+Let $\Monoid$ be a countably-infinite left-cancellative monoid with discrete topology, then its left-Haar measure is the counting measure $|\cdot|$.
+:::

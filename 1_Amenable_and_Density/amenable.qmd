@@ -1,8 +1,8 @@
 ---
 title: Amenable
-term-aliases:
+terms:
   - alias: amenable
-    id: amenable
+    id: def-amenable
 macros:
   - command: AmenableGroup
     macro: '{\\Gamma}'
@@ -14,6 +14,6 @@ dependencies:
 
 ::: {#def-amenable}
 
-For simplicity, we will use the alternative and equivalent definition that a group is *amenable* (and second countable) if and only if it has a Følner sequence.
+For simplicity, we will use the alternative and equivalent definition that a locally compact group, $\AmenableGroup$, is *amenable* (and second countable) if and only if it has a Følner sequence.
 :::
 

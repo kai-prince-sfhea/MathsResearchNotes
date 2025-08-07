@@ -1,0 +1,45 @@
+---
+title: Factor Maps
+term-aliases:
+  - alias: Kronecker
+    id: prp-KroneckerGeneric
+    translate: false
+macros:
+  - command: ProjectionMap
+    macro: '{\\pi}_{#1}'
+    variables: 1
+    variablesDefault: '\\vphantom{}'
+  - command: KroneckerSpace
+    macro: '{Z}'
+  - command: KroneckerSpaceElement
+    macro: '{z}'
+  - command: KroneckerAction
+    macro: '{H}'
+  - command: KroneckerMeasure
+    macro: '{m_Z}'
+  - command: KroneckerFactor
+    macro: '{(\\KroneckerSpace,\\KroneckerMeasure,\\KroneckerAction)}'
+dependencies:
+  - group
+---
+
+::: {#def-MeasurableFactor}
+## @kra2022infinite [Definition 2.1]
+
+For a system $(X,\Measure,T)$ we say that the system $(Y,\
+u,S)$ is a *measurable factor* of $(X,\Measure,T)$ if there is a measurable map $\ProjectionMap:X\rightarrow Y$, the *measurable factor map*, such that $\ProjectionMap(\Measure)=\
+u$ and $(S\circ\ProjectionMap)(x)=(\ProjectionMap\circ T)(x)$ for $\Measure$-almost every $x\in X$.
+:::
+
+::: {#prp-KroneckerGeneric}
+## cf. @host2019short [Proposition 5]
+
+Let $(X,\AmenableGroup)$ be a topological dynamical system where $\AmenableGroup$ is an amenable group, $x_0\in X$, and $\Measure$ be an ergodic invariant probability measure supported on the closed orbit of $x_0$ under the action of $\AmenableGroup$.
+
+Let $\KroneckerFactor$ be the Kronecker factor of $(X,\Measure,\AmenableGroup)$, with factor map $\ProjectionMap:X\rightarrow\KroneckerSpace$.
+
+Let $X\times\KroneckerSpace$ be endowed with the group action of $\AmenableGroup\times\KroneckerAction$. Let $\tilde\Measure$ be the measure on $X\times\KroneckerSpace$ and image of $\Measure$ under the map $X\rightarrow X\times\KroneckerSpace$ where $x\mapsto(x,\ProjectionMap(x))$.
+
+Then there exists a Følner sequence $\tilde{\Folner}$ and a point $\KroneckerSpaceElement_0\in\KroneckerSpace$ such that $(x_0,\KroneckerSpaceElement_0)$ is generic for $\tilde{\Measure}$ along $\tilde{\Folner}$.
+
+:::

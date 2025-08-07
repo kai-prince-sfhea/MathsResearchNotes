@@ -1,26 +1,67 @@
 ---
 title: Density
-term-aliases:
+terms:
   - alias: density
-    id: density
+    id: def-density
+macros:
+  - command: Density
+    macro: 'd_{{#1}}({#2})'
+    variables: 2
+    variablesDefault: '\\Folner'
+  - command: UpperDensity
+    macro: '\\overline{d}_{{#1}}({#2})'
+    variables: 2
+    variablesDefault: '\\Folner'
+  - command: LowerDensity
+    macro: '\\underline{d}_{{#1}}({#2})'
+    variables: 2
+    variablesDefault: '\\Folner'
+  - command: UpperBanachDensity
+    macro: '\\overline{d}({#1})'
+    variables: 1
 dependencies:
   - folner
 ---
 
 ::: {#def-density}
 
-For $A\subseteq G$ and Følner sequence $\Phi=(\Phi_N)_{n=1}^\infty$, we write
+For $A\subseteq\Group$ and Følner sequence $\Folner=(\Folner[N])_{n=1}^\infty$, we write
 \begin{align*}
-    \overline{d}_\Phi(A)&=\limsup_{N\rightarrow\infty}\frac{|A\cap\Phi_N|}{|\Phi_N|}
-    \\\underline{d}_\Phi(A)&=\liminf_{N\rightarrow\infty}\frac{|A\cap\Phi_N|}{|\Phi_N|}
+    \UpperDensity{A}&=\limsup_{N\rightarrow\infty}\frac{\CountingMeasure{A\cap\Folner[N]}}{\CountingMeasure{\Folner[N]}}
+    \\\LowerDensity{A}&=\liminf_{N\rightarrow\infty}\frac{\CountingMeasure{A\cap\Folner[N]}}{\CountingMeasure{\Folner[N]}}
 \end{align*}
-to be the *upper and lower densities of $A$ with respect to $\Phi$*, respectively. If these agree, then we can write
+to be the *upper and lower densities of $A$ with respect to $\Folner$*, respectively. If these agree, then we can write
 $$
-d_\Phi(A)=\lim_{N\rightarrow\infty}\frac{|A\cap\Phi_N|}{|\Phi_N|}
+\Density{A}=\lim_{N\rightarrow\infty}\frac{\CountingMeasure{A\cap\Folner[N]}}{\CountingMeasure{\Folner[N]}}
 $$
-to be the *density of $A$ with respect to $\Phi$*. We also define the *upper Banach density of $A$* by
+to be the *density of $A$ with respect to $\Folner$*. We also define the *upper Banach density of $A$* by
 $$
-\overline{d}(A)=\sup\{d_\Phi(A):\text{for Følner sequences }\Phi\text{ where }d_\Phi(A)\text{ exists}\}.
+\UpperBanachDensity{A}=\sup\{d_{\Folner}(A):\text{for Følner sequences }\Folner\text{ where }d_{\Folner}(A)\text{ exists}\}.
 $$
 :::
 
+::: {#prp-DensityMonotonicity}
+## Monotonicity
+
+Let $A,B\subseteq\Monoid$ be subsets. For $A\subseteq B$, we have$$\UpperDensity{A}\leq\UpperDensity{B}, $$and$$\LowerDensity{A}\leq\LowerDensity{B}. $$ 
+:::
+
+::: {#prp-DensityTranslationInvariance}
+## Translation Invariance
+
+Let $B\subseteq\Monoid$ be a subset. For all $\MonoidElement\in\Monoid$, we have that
+$$\UpperDensity{B}=\UpperDensity[\MonoidOperation{\MonoidElement}{\Folner}]{B}=\UpperDensity{\MonoidOperation{\MonoidElement}{B}}$$
+and
+$$\LowerDensity{B}=\LowerDensity[\MonoidOperation{\MonoidElement}{\Folner}]{B}=\LowerDensity{\MonoidOperation{\MonoidElement}{B}}.$$
+:::
+
+::: {#lem-DensityPairwiseAdditivity}
+## Upper/Lower Density Pairwise Additive
+
+Let $A,B\subseteq\Monoid$ be subsets such that $\Density{A}$ and $\Density{B}$ both exist, then we have
+\begin{align*}
+    \UpperDensity{A\cup B}+\LowerDensity{A\cap B}&=\Density{A}+\Density{B},
+    \\\LowerDensity{A\cup B}+\UpperDensity{A\cap B}&=\Density{A}+\Density{B}.
+\end{align*}
+Further, we have $\Density{A\cap B}$ exists if and only if $\Density{A\cup B}$ exists.
+:::

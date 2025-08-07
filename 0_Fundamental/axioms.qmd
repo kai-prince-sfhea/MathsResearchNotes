@@ -1,14 +1,12 @@
 ---
 title: Axioms
-term-aliases:
+terms:
   - alias: associativity
-    id: associativity
+    id: def-associativity
   - alias: identity
-    id: identity
+    id: def-identity
   - alias: inverse
-    id: inverse
-  - alias: unique inverse
-    id: uniqueInverse
+    id: def-inverse
 macros:
   - command: "N"
     description: "The Natural Numbers: $1, 2, 3, ...$"
@@ -23,7 +21,7 @@ macros:
     variables: 2
   - command: Identity
     macro: '{e}'
-embedMap: [\Set,\Operation,\Identity]
+embedMap: [\\Set,\\Operation,\\Identity]
 ---
 
 ::: {#def-associativity}
@@ -37,12 +35,9 @@ For all ${#1},{#2},{#3}$ in $\Set$, one has $\Operation{(\Operation{#1}{#2})}{#3
 There exists an element $\Identity$ in $\Set$ such that, for every ${#1}$ in $\Set$, one has $\Operation{\Identity}{#1}={#1}$ and $\Operation{#1}{\Identity}={#1}$. Such an element is unique and is called the **identity element**.
 :::
 
-:::: {#def-uniqueInverse}
-
-::: {#def-inverse}
+:::: {#def-Inverse}
 ## inverse
 For each ${#1}$ in $\Set$, there exists an element ${#2}$ in $\Set$ such that $\Operation{#1}{#2}=\Identity$ and $\Operation{#2}{#1}=\Identity$, where $\Identity$ is the identity element.
-:::
 
 For each ${#1}$, the element ${#2}$ is unique and is called the **inverse** of ${#2}$ and is denoted $\Inverse{#1}$.
 ::::

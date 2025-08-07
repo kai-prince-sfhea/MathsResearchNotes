@@ -1,0 +1,38 @@
+---
+title: Furstenberg's Correspondence Principle
+term-aliases:
+  - alias: Furstenberg's Correspondence Principle
+    id: thm-FCP
+    translate: false
+  - alias: FCP
+    id: thm-FCP
+    translate: false
+macros:
+  - command: ShiftSpace
+    macro: '{X}'
+  - command: FurstenbergFolner
+    macro: '{\\Psi}_{#1}'
+    variables: 1
+    variablesDefault: '{\\vphantom{}}'
+  - command: FurstenbergSystem
+    macro: '({#3},{#2},{#1})'
+    variables: 3
+    variablesDefault:
+        - '\\AmenableGroup'
+        - '\\Measure'
+        - '\\ShiftSpace'
+dependencies:
+  - group
+---
+
+::: {#thm-FCP}
+## cf. @kra2022infinite [Theorem 2.10]
+
+Let $\AmenableGroup$ be an amenable group, $A\subset \AmenableGroup$, and $\Folner$ be a Følner sequence in $\AmenableGroup$ such that the limit
+$$\delta=\lim_{N\rightarrow\infty}\frac{\CountingMeasure{A\cap\Folner[N]}}{\CountingMeasure{\Folner[N]}}$$
+exists.
+
+Then there exists an ergodic system $(\ShiftSpace,\Measure,\AmenableGroup)$ that is acted on by $\AmenableGroup$, a clopen set $E\subset\ShiftSpace$, a Følner sequence $\FurstenbergFolner$ in $\AmenableGroup$, and a point $a\in\ShiftSpace$ that is generic with $\Measure$ with respect to $\FurstenbergFolner$ such that $\Measure(E)\geq\delta$ and
+$$A={\AmenableGroupElement\in \AmenableGroup:\GroupAction{\AmenableGroupElement}{a}\in E}. $$
+
+:::

@@ -1,0 +1,38 @@
+---
+title: Recurrence and Ergodic Theorems
+terms:
+  - alias: Bergelson's Recurrence Theorem
+    id: thm-recurrence
+  - alias: Pointwise Ergodic Theorem
+    id: thm-GeneralisedPET
+---
+
+::: {#thm-recurrence}
+## @Bergelson1985Recurrence [Theorem 1.1]
+
+Let $(X,\SigmaAlgebra{B},\Measure)$ be a probability space and suppose that $B_n\in\SigmaAlgebra{B}$ such that $\Measure(B_n)=b>0$ for all $n\in\mathbb{N}$.
+
+Then there exists a positively dense index set $I\subset\mathbb{N}$ such that, for any finite subset $F\subseteq I$, we have
+$$\Measure\left(\bigcap_{i\in F}B_i \right)>0. $$
+
+:::
+
+::: {#thm-GeneralisedPET}
+## cf. @Lindenstrauss2001PETAmenable [Theorem 1.2]
+
+Let $\AmenableGroup$ be a discrete amenable group acting on a measure space $(X,\SigmaAlgebra{B},\Measure)$ by measure preserving transformation and let $\Folner=(\Folner[N])_{N\in\mathbb{N}}$ be a tempered Følner sequence.
+
+Then, for any $f\in\text{L}^1(\Measure)$, there is a $\AmenableGroup$-invariant $\bar{f}\in\text{L}^1(\Measure)$ such that
+$$\lim_{N\rightarrow\infty}\frac{1}{\CountingMeasure{\Folner[N]}}\sum_{\AmenableGroupElement\in\Folner[N]}f(\GroupAction{\AmenableGroupElement}{x})=\bar{f}(x) $$
+for $\Measure$-almost every $x\in X$. In particular, if the $\AmenableGroup$ action is ergodic, then
+$$\lim_{N\rightarrow\infty}\frac{1}{\CountingMeasure{\Folner[N]}}\sum_{\AmenableGroupElement\in\Folner[N]}f(\GroupAction{\AmenableGroupElement}{x})=\int f(x)\ d\Measure(x) $$
+for $\Measure$ almost every $x$.
+
+:::
+
+::: {#cor-temperedGeneric}
+## cf. @host2019short [Corollary 8]
+
+Let $(X,\AmenableGroup)$ be a topological dynamical system where $\AmenableGroup$ is an amenable group, $\Measure$ an ergodic measure on $X$ and $\Folner$ a tempered Følner sequence. Then $\Measure$-almost every $x\in X$ is generic for $\Measure$ along $\Folner$.
+
+:::
