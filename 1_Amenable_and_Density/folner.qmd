@@ -1,24 +1,24 @@
 ---
 title: Følner sequence
-term-aliases:
-  - alias: Følner
+terms:
+  - term: Følner
+    macro: Folner
+    prefixes:
+    - prefix: "right-"
+      id: def-rightFolner
+    - prefix: "left-"
+      id: def-leftFolner
     id: def-Folner
     translate: false
-  - alias: right-Følner
-    id: def-rightFolner
-  - alias: left-Følner
-    id: def-leftFolner
-  - alias: tempered
+    associatedMacros:
+    - command: Folner
+      macro: '{\\Phi}_{#1}'
+      variables: 1
+      variablesDefault: '\\vphantom{}'
+  - term: tempered
     id: def-tempered
-  - alias: Shulman condition
+  - term: Shulman condition
     id: def-tempered
-macros:
-  - command: Folner
-    macro: '{\\Phi}_{#1}'
-    variables: 1
-    variablesDefault: '{\\vphantom{}}'
-dependencies:
-  - group
 ---
 
 # Følner Sequences

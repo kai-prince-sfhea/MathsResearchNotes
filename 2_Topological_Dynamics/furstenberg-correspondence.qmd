@@ -1,28 +1,25 @@
 ---
 title: Furstenberg's Correspondence Principle
-term-aliases:
-  - alias: Furstenberg's Correspondence Principle
+terms:
+  - term: Furstenberg's Correspondence Principle
+    abbreviation: FCP
     id: thm-FCP
     translate: false
-  - alias: FCP
-    id: thm-FCP
-    translate: false
-macros:
-  - command: ShiftSpace
-    macro: '{X}'
-  - command: FurstenbergFolner
-    macro: '{\\Psi}_{#1}'
-    variables: 1
-    variablesDefault: '{\\vphantom{}}'
-  - command: FurstenbergSystem
-    macro: '({#3},{#2},{#1})'
-    variables: 3
-    variablesDefault:
+    associatedMacros:
+    - command: FurstenbergFolner
+      macro: '{\\Psi}_{#1}'
+      variables: 1
+      variablesDefault: '{\\vphantom{}}'
+    - command: FurstenbergSystem
+      macro: '({#3},{#2},{#1})'
+      variables: 3
+      variablesDefault:
         - '\\AmenableGroup'
         - '\\Measure'
         - '\\ShiftSpace'
-dependencies:
-  - group
+macros:
+  - command: ShiftSpace
+    macro: '{X}'
 ---
 
 ::: {#thm-FCP}

@@ -1,26 +1,25 @@
 ---
 title: Density
 terms:
-  - alias: density
+  - term: density
+    regex: "[Dd]ensit[yi]e?s?"
     id: def-density
-macros:
-  - command: Density
-    macro: 'd_{{#1}}({#2})'
-    variables: 2
-    variablesDefault: '\\Folner'
-  - command: UpperDensity
-    macro: '\\overline{d}_{{#1}}({#2})'
-    variables: 2
-    variablesDefault: '\\Folner'
-  - command: LowerDensity
-    macro: '\\underline{d}_{{#1}}({#2})'
-    variables: 2
-    variablesDefault: '\\Folner'
-  - command: UpperBanachDensity
-    macro: '\\overline{d}({#1})'
-    variables: 1
-dependencies:
-  - folner
+    associatedMacros:
+      - command: Density
+        macro: 'd_{{#1}}({#2})'
+        variables: 2
+        variablesDefault: '\\Folner'
+      - command: UpperDensity
+        macro: '\\overline{d}_{{#1}}({#2})'
+        variables: 2
+        variablesDefault: '\\Folner'
+      - command: LowerDensity
+        macro: '\\underline{d}_{{#1}}({#2})'
+        variables: 2
+        variablesDefault: '\\Folner'
+      - command: UpperBanachDensity
+        macro: '\\overline{d}({#1})'
+        variables: 1
 ---
 
 ::: {#def-density}

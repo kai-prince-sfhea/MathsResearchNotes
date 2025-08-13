@@ -1,16 +1,22 @@
 ---
 title: Axioms
 terms:
-  - alias: associativity
+  - term: Natural number
+    regex: "[Nn]atural numbers?"
+    associatedMacros:
+    - command: "N"
+      description: "The Natural Numbers: $1, 2, 3, ...$"
+      macro: '\\mathbb{N}'
+  - term: associativity
+    regex: "[Aa]ssociativ[ei]t?y?"
     id: def-associativity
-  - alias: identity
+  - term: identity
+    regex: "[Ii]dentit[yi]e?s?"
     id: def-identity
-  - alias: inverse
+  - term: inverse
+    regex: "[Ii]nverses?"
     id: def-inverse
 macros:
-  - command: "N"
-    description: "The Natural Numbers: $1, 2, 3, ...$"
-    macro: '\\mathbb{N}'
   - command: Inverse
     macro: '{#1}^{-1}'
     variables: 1
@@ -21,7 +27,6 @@ macros:
     variables: 2
   - command: Identity
     macro: '{e}'
-embedMap: [\\Set,\\Operation,\\Identity]
 ---
 
 ::: {#def-associativity}

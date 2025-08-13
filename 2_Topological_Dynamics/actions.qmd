@@ -1,30 +1,35 @@
 ---
 title: Actions
 terms:
-  - alias: action
+  - term: action
+    regex: "[Aa]ction"
     id: def-action
-  - alias: generic
+    associatedMacros:
+    - command: GroupAction
+      macro: '{#1}.{#2}'
+      variables: 2
+    - command: GroupActionPreImage
+      macro: '{#1}^{-1}.{#2}'
+      variables: 2
+  - term: generic
+    regex: "[Gg]eneric]"
     id: def-generic
-  - alias: topological dynamical system
+    associatedMacros:
+    - command: Generic
+      macro: '\\text{gen}({#1},{#2})'
+      variables: 2
+      variablesDefault:
+        - '\\Measure'
+        - '\\Folner'
+  - term: topological dynamical system
     id: def-topologicalDynamicalSystem
 macros:
-  - command: GroupAction
-    macro: '{#1}.{#2}'
-    variables: 2
-  - command: Generic
-    macro: '\\text{gen}({#1},{#2})'
-    variables: 2
-    variablesDefault:
-      - '\\Measure'
-      - '\\Folner'
   - command: KoopmanOperator
     macro: '{U}_{{#1}}{#2}'
     variables: 2
     variablesDefault:
       - '\\GroupElement'
       - '\\vphantom{}'
-dependencies:
-  - group
 ---
 
 ::: {#def-action}

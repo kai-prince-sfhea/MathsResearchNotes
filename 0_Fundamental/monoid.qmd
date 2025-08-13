@@ -1,19 +1,19 @@
 ---
 title: Monoid
 terms:
-    - alias: monoid
-macros:
-  - command: Monoid
-    macro: '{M}'
-  - command: MonoidOperation
-    macro: '{#1}\\cdot{#2}'
-    variables: 2
-  - command: MonoidIdentity
-    macro: '{e}'
-  - command: MonoidElement
-    macro: '{g}'
-dependencies:
-  - axioms
+  - term: monoid
+    regex: "[Mm]onoids?"
+    associatedMacros:
+    - command: Monoid
+      macro: '{M}'
+    - command: MonoidOperation
+      macro: '{#1}\\cdot{#2}'
+      variables: 2
+    - command: MonoidIdentity
+      macro: '{e}'
+      description: "The identity of the monoid $\\Monoid$."
+    - command: MonoidElement
+      macro: '{m}'
 ---
 
 ::: {#prp-HaarCounting}

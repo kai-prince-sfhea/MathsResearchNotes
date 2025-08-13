@@ -1,26 +1,25 @@
 ---
 title: Factor Maps
-term-aliases:
-  - alias: Kronecker
+terms:
+  - term: Kronecker
     id: prp-KroneckerGeneric
     translate: false
+    associatedMacros:
+    - command: KroneckerSpace
+      macro: '{Z}'
+    - command: KroneckerSpaceElement
+      macro: '{z}'
+    - command: KroneckerAction
+      macro: '{H}'
+    - command: KroneckerMeasure
+      macro: '{m_Z}'
+    - command: KroneckerFactor
+      macro: '{(\\KroneckerSpace,\\KroneckerMeasure,\\KroneckerAction)}'
 macros:
   - command: ProjectionMap
     macro: '{\\pi}_{#1}'
     variables: 1
     variablesDefault: '\\vphantom{}'
-  - command: KroneckerSpace
-    macro: '{Z}'
-  - command: KroneckerSpaceElement
-    macro: '{z}'
-  - command: KroneckerAction
-    macro: '{H}'
-  - command: KroneckerMeasure
-    macro: '{m_Z}'
-  - command: KroneckerFactor
-    macro: '{(\\KroneckerSpace,\\KroneckerMeasure,\\KroneckerAction)}'
-dependencies:
-  - group
 ---
 
 ::: {#def-MeasurableFactor}

@@ -1,20 +1,19 @@
 ---
 title: Group
 terms:
-  - alias: group
+  - term: group
+    regex: "[Gg]roup"
     id: def-group
-macros:
-  - command: Group
-    macro: '{G}'
-  - command: GroupOperation
-    macro: '{#1}\\cdot{#2}'
-    variables: 2
-  - command: GroupIdentity
-    macro: '{e}'
-  - command: GroupElement
-    macro: '{g}'
-dependencies:
-  - axioms
+    associatedMacros:
+    - command: Group
+      macro: '{\\Gamma}'
+    - command: GroupOperation
+      macro: '{#1}\\cdot{#2}'
+      variables: 2
+    - command: GroupIdentity
+      macro: '{e}'
+    - command: GroupElement
+      macro: '{\\gamma}'
 ---
 
 ::: {#def-group}

@@ -1,9 +1,11 @@
 ---
 title: Recurrence and Ergodic Theorems
 terms:
-  - alias: Bergelson's Recurrence Theorem
+  - term: Bergelson's Recurrence Theorem
+    abbreviation: BRT
     id: thm-recurrence
-  - alias: Pointwise Ergodic Theorem
+  - term: Pointwise Ergodic Theorem
+    abbreviation: PET
     id: thm-GeneralisedPET
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: Measure Theory and Ergodic Theory
 terms:
-  - alias: topological measure space
+  - term: topological measure space
+    regex: "[Tt]opological [Mm]easure [Ss]pace"
     id: def-TopoMeasureSpace
 macros:
   - command: Topology
@@ -21,8 +22,6 @@ macros:
     variablesDefault: '\\,\\cdot\\,'
   - command: CountingMeasure
     macro: '{\\lambda}'
-dependencies:
-  - group
 ---
 
 The foundational knowledge relating to Measure & Ergodic Theory, that has not been covered elsewhere, was provided by @Robertson2023MeasureErgodicTheory.

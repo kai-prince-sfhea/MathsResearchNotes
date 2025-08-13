@@ -1,15 +1,14 @@
 ---
 title: Amenable
 terms:
-  - alias: amenable
+  - term: amenable
+    regex: "[Aa]menable"
     id: def-amenable
-macros:
-  - command: AmenableGroup
-    macro: '{\\Gamma}'
-  - command: AmenableGroupElement
-    macro: '{\\gamma}'
-dependencies:
-  - folner
+    associatedMacros:
+    - command: AmenableGroup
+      macro: '{\\Gamma}'
+    - command: AmenableGroupElement
+      macro: '{\\gamma}'
 ---
 
 ::: {#def-amenable}
