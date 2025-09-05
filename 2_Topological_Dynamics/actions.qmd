@@ -33,7 +33,7 @@ macros:
 ---
 
 ::: {#def-action}
-## @Bekka2000GroupActionDynamics [Chapter II Section 2]
+## [[@Bekka2000GroupActionDynamics, Chapter II, Section 2]]{.no-paren}
 
 An *action* of a group, $\Group$, on a measurable space $(X,\SigmaAlgebra{B})$ is a measurable mapping
 $$\Group\times X\rightarrow X,\ (\GroupElement,x)\mapsto \GroupAction{\GroupElement}{x} $$
@@ -72,4 +72,4 @@ then we say *$x$ is generic for $\Measure$ with respect to $\Folner$* and we den
 
 We are interested in how the action of a group $\Group$ transforms functions on $(X,\SigmaAlgebra{B},\Measure)$ so we must identify the associated definitions within functional analysis.
 
-We define the map $\KoopmanOperator:\text{L}^2(X)\rightarrow\text{L}^2(X)$ where $f\mapsto f\circ \KoopmanOperator$ as the *Koopman operator* induced by $\GroupElement\in\Group$. We find that the Koopman operator induced by $\Group$ is a unitary operator and the group homomorphism $U:\Group\rightarrow\mathscr{U}(\text{L}^2(X))$ is the *unitary representation* of $\Group$ on $\text{L}^2(X)$, where $\mathscr{U}(\text{L}^2(X))$ is the set of all unitary operators on $\text{L}^2(X)$.
+We define the map $\KoopmanOperator[\GroupElement][]:\text{L}^2(X)\rightarrow\text{L}^2(X)$ where $f\mapsto f\circ \KoopmanOperator[\GroupElement][]$ as the *Koopman operator* induced by $\GroupElement\in\Group$. We find that the Koopman operator induced by $\Group$ is a unitary operator and the group homomorphism $U:\Group\rightarrow\mathscr{U}(\text{L}^2(X))$ is the *unitary representation* of $\Group$ on $\text{L}^2(X)$, where $\mathscr{U}(\text{L}^2(X))$ is the set of all unitary operators on $\text{L}^2(X)$.

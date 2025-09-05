@@ -1,0 +1,114 @@
+---
+title: Joinings
+terms:
+  - term: Product Measure
+    id: def-ProductMeasure
+    associatedMacros:
+    - command: ProductMeasure
+      macro: '{#1}\times{#2}'
+      variables: 2
+      variablesDefault:
+        - '\\Measure'
+        - '\\nu'
+  - term: Marginal
+    regex: "[Mm]arginals?"
+    id: def-Marginals
+  - term: Joinings
+    regex: "[Jj]oinings?"
+    id: def-Joinings
+    prefixes:
+    - prefix: "self-"
+---
+
+We want to build our understanding of joinings as they help us create a generalised definition of a measure on product spaces that are behave as we would expect for a multi-dimensional measure. This is important when we start looking at $n$-dimensional Erdős cubes. In building this understanding, we used the product measure as an example and investigated what property we are interested in that we'd like to see in joinings.
+
+::: {#def-ProductMeasure}
+
+The *product measure* on $(X\times Y,\SigmaAlgebra{B}\otimes\SigmaAlgebra{C})$ is $\ProductMeasure$ where
+$$(\ProductMeasure)(B\times C)=\Measure(B)\nu(C)$$
+for $B\in\SigmaAlgebra{B},C\in\SigmaAlgebra{C}$.
+
+The product measure is $T\times S$-invariant, i.e., for all $D\in\SigmaAlgebra{B}\otimes\SigmaAlgebra{C}$,
+$$(\ProductMeasure)(D)=(\ProductMeasure)((T\times S)^{-1}D).$$
+
+Note, if $D=B\times C$, then
+$$(T\times S)^{-1}(B\times C)=T^{-1}B\times S^{-1}C.$$
+:::
+
+The main property we are interested in relate to how we can relate the measure of a product space to the measures of the component spaces. This leads us to the definition of marginals:
+
+::: {#def-Marginals}
+
+Let $\ProjectionMap[X]:X\times Y\rightarrow X$ and $\ProjectionMap[Y]:X\times Y\rightarrow Y$ be coordinate projections of a probability space $(X\times Y,\SigmaAlgebra{B}\times\SigmaAlgebra{C},\eta)$. We call the coordinate-projected measures $\ProjectionMap[X](\eta)$ and $\ProjectionMap[Y](\eta)$ the *marginals* of $\eta$.
+
+These have the property that
+$$(\ProjectionMap[X](\eta))(B)=\eta(\ProjectionMap[X]^{-1}(B))$$
+and
+$$(\ProjectionMap[Y](\eta))(C)=\eta(\ProjectionMap[Y]^{-1}(C)).$$
+:::
+
+When looking at the product measure $\eta=\ProductMeasure$ as our example, we get the marginal $\Measure$ as
+\begin{align*}
+    (\ProjectionMap[X](\ProductMeasure))(B)&=(\ProductMeasure)(\ProjectionMap[X]^{-1}(B))
+    \\&=(\ProductMeasure)(B\times Y)
+    \\&=\Measure(B)\nu(Y)
+    \\&=\Measure(B),
+\end{align*}
+so $\ProjectionMap[X](\ProductMeasure)=\Measure$ and we get $\ProjectionMap[Y](\ProductMeasure)=\nu$ similarly. Hence, when looking at measures on product spaces, we want to conserve this property. Thus, we arrive at the definition of joinings:
+
+::: {#def-Joinings}
+
+A *joining* of $(X,\SigmaAlgebra{B},\Measure,T)$ and $(Y,\SigmaAlgebra{C},\nu,S)$ is a measure $\eta$ on $(X\times Y,\SigmaAlgebra{B}\otimes\SigmaAlgebra{C})$ satisfying:
+
+1. $\eta$ is $T\times S$-invariant,
+2. and, $\eta$ has marginals $\Measure$ and $\nu$.
+
+A *self-joining* of $(X,\SigmaAlgebra{B},\Measure,T)$ is a joining of $(X,\SigmaAlgebra{B},\Measure,T)$ and itself.
+:::
+
+The product measure is always a joining and it may sometimes be the only joining for some product spaces. For our research, we're interested in the product space of $(X,\SigmaAlgebra{B},\Measure)$ with itself, so we will be focusing on self-joinings. We move on to this special case of self-joinings:
+
+::: {#prp-DiagonalJoining}
+
+Let $$\triangle=\{(x,x):x\in X\}\subseteq X\times X.$$ Then there is a self-joining $\eta$ of $(X,\SigmaAlgebra{B},\Measure,T)$ with $\eta(\triangle)=1$.
+:::
+
+For the product measure, we only get $(\ProductMeasure)(\triangle)>0$ if $\Measure(\{a\})>0$, for atoms $a\in X$, and we get $(\ProductMeasure)(\triangle)=1$ if and only if $X=\{*\}$, i.e., $X$ only has a single point.
+
+To show that we will there exists a self-joining of $(X,\SigmaAlgebra{B},\Measure,T)$, $\eta$, such that $\eta(\triangle)=1$, we define $\phi:X\rightarrow X\times X$ by $\phi(x)=(x,x)$ and define the push-forward measure of $\Measure$ under $\phi$ as
+\begin{align*}
+    \phi\Measure(B\times C) &=\Measure(\phi^{-1}(B\times C))
+    \\&=\Measure(\{x\in X: x\in B,x\in C \})
+    \\&=\Measure(B\cap C).
+\end{align*}
+As $\phi^{-1}(\triangle)=X$ and $\Measure(X)=1$, we arrive at $\phi\Measure(\triangle)=1$ and by setting $\eta=\phi\Measure$, we complete the proof.
+
+## Relatively Independent Joinings
+
+Before we can look at the measures required for Erd\"{o}s cubes, we also set out to understand relatively independent joinings.
+
+::: {#def-RelativelyIndependentJoining}
+
+A *relatively independent joining* of $(X,\SigmaAlgebra{B},\Measure,T)$ is the self joining, $\nu$, of $(X,\SigmaAlgebra{C},\Measure,T)$ where $\SigmaAlgebra{C}$ is the $\sigma$-subalgebra of $T$-invariant subsets in $\SigmaAlgebra{B}$.
+:::
+
+We construct an example of a relatively independent joining.
+
+Fix $(X,\SigmaAlgebra{B},\Measure,T)$ and a $\sigma$-subalgebra $\SigmaAlgebra{C}\subseteq\SigmaAlgebra{B}$ such that $\SigmaAlgebra{C}$ is $T$-invariant. This gives us the following properties for all $f\in\text{L}^2(X,\SigmaAlgebra{B},\Measure)$:
+
+1. $\Expectation(f\mid\SigmaAlgebra{C})$ exists.
+2. $\Expectation(Tf\mid\SigmaAlgebra{C})$ exists as $Tf=f\circ T$.
+3. $T\ \Expectation(f\mid\SigmaAlgebra{C})=\Expectation(Tf\mid\SigmaAlgebra{C})$.
+
+This allows us to use $\SigmaAlgebra{C}$ to define a self-joining $\nu$ such that
+$$\nu(A\times B)=\int\Expectation(\mathbb{1}_A\mid\SigmaAlgebra{C})\cdot\Expectation(\mathbb{1}_B\mid\SigmaAlgebra{C})\ \mathrm{d}\Measure.$$
+We know this is a probability measure as $\nu(X\times X)=\int\mathbb{1}_X\cdot\mathbb{1}_X\ \mathrm{d}\Measure=\Measure(X)=1$. Let $\ProjectionMap[1],\ProjectionMap[2]:X\times X\rightarrow X$ be our projections of the first and second coordinates, respectively. Fixing $B\in\SigmaAlgebra{B}$,
+\begin{align*}
+    \nu(\ProjectionMap[1]^{-1}(B))=\nu(B\times X)
+    &=\int\Expectation(\mathbb{1}_B\mid\SigmaAlgebra{C})\cdot\Expectation(\mathbb{1}_X\mid\SigmaAlgebra{C})\ \mathrm{d}\Measure
+    \\&=\int\Expectation(\mathbb{1}_B\mid\SigmaAlgebra{C})\ \mathrm{d}\Measure
+    \\&=\Measure(B),
+\end{align*}
+as $\Expectation(\mathbb{1}_X\mid\SigmaAlgebra{C})=1$. Thus, we have shown that the marginal $\ProjectionMap[1](\nu)$ is $\Measure$ and we also have $\ProjectionMap[2](\nu)=\Measure$ similarly. The proof that $\nu$ is $T\times T$-invariant is also trivial.
+
+We also proved: If $(X,\SigmaAlgebra{B},\Measure,T)$ is ergodic, then the relatively independent joining of $(X,\SigmaAlgebra{B},\Measure,T)$ is the product measure $\Measure\times\Measure$, and that this may not be true for the relatively independent joining of $(X\times X,\SigmaAlgebra{B}\times\SigmaAlgebra{B},\Measure\times\Measure,T\times T)$ as $(X\times X,\SigmaAlgebra{B}\times\SigmaAlgebra{B},\Measure\times\Measure,T\times T)$ may not be an ergodic system.

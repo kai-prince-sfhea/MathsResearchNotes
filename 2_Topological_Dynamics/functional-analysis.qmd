@@ -1,0 +1,173 @@
+---
+title: Functional Analysis
+terms:
+  - term: linear isometry
+    regex: "[Ll]inear [Ii]sometry"
+    id: def-Representation
+  - term: unitary operator
+    regex: "[Uu]nitary [Oo]perator"
+    id: def-Representation
+  - term: unitary representation
+    regex: "[Uu]nitary [Rr]epresentation"
+    id: def-Representation
+  - term: invariant Markov sub-lattice
+    regex: "[Ii]nvariant Markov [Ss]ub-?lattice"
+    id: def-MarkovSubLattive
+  - term: semigroup of operators
+    regex: "[Ss]emi-?group of [Oo]perators"
+    id: def-ContractionSemigroup
+  - term: contraction semigroup
+    regex: "[Cc]ontraction [Ss]emi-?group"
+    id: def-ContractionSemigroup
+  - term: fixed space
+    regex: "[Ff]ixed [Ss]pace"
+    id: def-ContractionSemigroup
+  - term: closed convex hull
+    regex: "[Cc]losed [Cc]onvex [Hh]ull"
+    id: def-ContractionSemigroup
+  - term: closed linear hull
+    regex: "[Cc]losed [Ll]inear [Hh]ull"
+    id: def-ContractionSemigroup
+  - term: dual group
+    regex: "[Dd]ual [Gg]roup"
+    id: def-DualGroup
+    associatedMacros:
+    - command: Dual
+      macro: '{#1}^{*}'
+      variables: 1
+  - term: invariant finite-dimensional subspace
+    regex: "[Ii]nvariant [Ff]inite[ -][Dd]imensional [Ss]ubspace"
+    id: def-DiscreteSpectrum
+  - term: discrete spectrum
+    regex: "[Dd]iscrete [Ss]pectrum"
+    id: def-DiscreteSpectrum
+  - term: strongly continuous
+    regex: "[Ss]trongly [Cc]ontinuous"
+    id: def-StronglyContinuous
+macros:
+  - command: HilbertSpace
+    macro: '{H}'
+---
+
+The foundational knowledge relating to Measure & Ergodic Theory, that has not been covered elsewhere, was provided by @ISem28.
+
+::: {#def-Representation}
+For a Hilbert space $\HilbertSpace$,
+
+1. A *linear isometry* is a linear map $U:\HilbertSpace \rightarrow \HilbertSpace$ such that $||Uf||=||f||$ for all $f\in \HilbertSpace$ (and thus injective).
+2. A linear isometry, $U$, is a *unitary operator* if it is surjective (and thus bijective).
+3. We write $\mathscr{U}(\HilbertSpace)$ for the set of all unitary operators $U:\HilbertSpace \rightarrow \HilbertSpace$.
+4. For a group $\Group$, we call a group homomorphism $U:\Group\rightarrow\mathscr{U}(\HilbertSpace )$, $\GroupElement\mapsto U_\GroupElement$ a *unitary representation* of $\Group$ on $\HilbertSpace$.
+:::
+
+::: {#def-MarkovSubLattive}
+Let $J:(Y,S)\rightarrow(X,T)$ be an extension of measure-preserving systems. Then $E=U_J(\text{L}^2(Y))$ is an *invariant Markov sub-lattice* of $\text{L}^2(X)$, i.e.,
+
+1. $E$ is a closed linear subspace of $\text{L}^2(X)$,
+2. $\boldsymbol{1}\in E$,
+3. $|f|,\ \text{Re}(f),\ \text{Im}(f)\in E$ for every $f\in E$, and
+4. $U_{T_\GroupElement}f\in E$ for every $f\in E$ and $\GroupElement\in\Group$.
+:::
+
+::: {#def-ContractionSemigroup}
+Let $\HilbertSpace$ be a Hilbert space. $\mathscr{L}(\HilbertSpace)$ is the space of all bounded linear operators from $\HilbertSpace$ to $\HilbertSpace$. [^1]
+
+[^1]: Note, $\mathscr{U}(\HilbertSpace)\subseteq\mathscr{L}(\HilbertSpace)$ and $||U||=1$ when $U\in\mathscr{U}(\HilbertSpace)$, so $\mathscr{U}(\HilbertSpace)$ is a contraction semigroup.
+
+A family $\mathscr{S}\subseteq\mathscr{L}(\HilbertSpace)$ is a *semigroup (of operators)* if $UV\in\mathscr{S}$ for all $U,V\in\mathscr{S}$. It is a *contraction semigroup* if, in addition, $||U||\leq1$ for all $U\in\mathscr{S}$.
+
+We call
+$$\text{fix}(\mathscr{S}):=\bigcap_{U\in\mathscr{S}}\text{fix}(U)=\{f\in\HilbertSpace\mid Uf=f\text{ for every }U\in\mathscr{S}\}$$
+the *fixed space* of $\mathscr{S}$.[^2][^3]
+
+[^2]: $\text{fix}(\mathscr{S})\subseteq \HilbertSpace_\text{ds}$.
+[^3]: Meeting Notes: 0-dimensional. Next most simple case would be scaling (1-dimensional), and then rotations on a place (2-dimensional).
+
+The *closed convex hull* $\overline{\text{co}}\ A$ is the closure of the set of all convex combinations of elements of $A$.
+
+The *closed linear hull* $\overline{\text{lin}}\ A$ is the closure of the set of all linear combinations of elements of $A$.
+:::
+
+::: {#def-DualGroup}
+Let $U:\AmenableGroup\rightarrow\mathscr{U}(\HilbertSpace)$ be a unitary representation of a discrete abelian amenable group $\AmenableGroup$.
+
+A group homomorphism $\chi:\AmenableGroup\rightarrow\mathbb{T}$, where $\mathbb{T}=\{z\in\mathbb{C}\mid|z|=1\}$, is called a *character*. The *dual group* $\Dual{\AmenableGroup}$ of $\AmenableGroup$ is the set of all such characters equipped with the multiplication given by $(\chi_1\chi_2)(\AmenableGroupElement):=\chi_1(\AmenableGroupElement)\chi_2(\AmenableGroupElement)$ for $\AmenableGroupElement\in\AmenableGroup$ and $\chi_1,\chi_2\in\Dual{\AmenableGroup}$.[^4]
+
+[^4]: Commutator subgroup and abelianisation?
+
+:::
+
+::: {#def-DiscreteSpectrum}
+
+Let
+    $$M_f:=\text{lin}\{U_\AmenableGroupElement f\mid\AmenableGroupElement\in\AmenableGroup \}. $$
+We call a subset $M\subseteq \HilbertSpace$ an *invariant finite-dimensional subspace* if $M_f$ is finite-dimensional and $U_\AmenableGroupElement f\in M$ for all $f\in M$ and $\AmenableGroupElement\in\AmenableGroup$.
+
+The closure
+$$\HilbertSpace_\text{ds}=\overline{\bigcup\{M\subseteq \HilbertSpace\mid M\text{ invariant finite-dimensional subspace} \}}\subseteq \HilbertSpace $$
+is called the *discrete spectrum part* of $U$.[^5]
+
+[^5]: Meeting Notes: In the $\AmenableGroup=\mathbb{Z}$ case, then $\HilbertSpace_\text{ds}$ can be broken up into one-dimensional objects that corresponds to an eigenfunction.
+
+:::
+
+::: {#prp-POrthogonalEigenspaces}
+## [[cf. @ISem28, Proposition 5.1.10]]{.no-paren}
+
+The eigenspaces $\text{ker}(\chi-U)$ for $\chi\in\Dual{\Group}$ are pairwise orthogonal. For $M\subseteq \HilbertSpace$, then the following are equivalent:
+
+1. $M$ is an irreducible invariant finite-dimensional subspace.
+2. $M$ is an invariant linear subspace which is at most one-dimensional.
+3. There is $\chi\in\Dual{\Group}$ and $f\in\text{ker}(\chi-U)$, such that $M=\mathbb{C}\cdot f$.
+
+:::
+
+::: {#def-StronglyContinuous}
+
+A unitary representation $U:\AmenableGroup\rightarrow\mathscr{U}(\HilbertSpace)$ of a topological group $\AmenableGroup$ is *strongly continuous* if $\AmenableGroup\rightarrow \HilbertSpace$, $x\mapsto U_xf$ is continuous for every $f\in \HilbertSpace$.
+
+:::
+
+::: {#def-RegularRepresentation}
+
+For every discrete group $\AmenableGroup$, the maps
+\begin{align}
+    L:\AmenableGroup\rightarrow\mathscr{U}(\text{L}^2(\AmenableGroup)),&\qquad x\mapsto L_x
+    \\ R:\AmenableGroup\rightarrow\mathscr{U}(\text{L}^2(\AmenableGroup)),&\qquad x\mapsto R_x
+\end{align}
+with $L_xf:=f\circ l_{x^{-1}}$ and $R_xf:=f\circ r_{x^{-1}}$ for $f\in\text{L}^2(\AmenableGroup)$ and $x\in\AmenableGroup$ are strongly continuous unitary representations. We call $L$ and $R$ the *left* and *right regular representation* of $\AmenableGroup$, respectively.[^6]
+
+[^6]:As $\AmenableGroup$ is discrete, then any map $\AmenableGroup\rightarrow \HilbertSpace$ is continuous for any topological space $\HilbertSpace$. Thus, $\AmenableGroup\rightarrow \text{L}^2(\AmenableGroup)$ defined by $\AmenableGroupElement\mapsto L_\AmenableGroupElement f$ or $\AmenableGroupElement\mapsto R_\AmenableGroupElement f$ is always continuous. Hence, $L$ and $R$ are strongly continuous unitary representations.
+
+:::
+
+Assume that $U:\AmenableGroup\rightarrow\mathscr{U}(\HilbertSpace)$ is a strongly continuous unitary representation of a discrete group $\AmenableGroup$. Let further $P$ be the orthogonal projection onto the fixed space $\text{fix}(U(\AmenableGroup))$. Then
+$$(Pf\mid g)=\lim_{N\rightarrow\infty}\frac{1}{|\Folner[N]|}\sum_{\AmenableGroupElement\in\Folner[N]}(U_\AmenableGroupElement f\mid g)$$
+for all $f,g\in\HilbertSpace$.
+
+If $U:\AmenableGroup\rightarrow\mathscr{U}(\HilbertSpace)$ is a strongly continuous unitary representation of a compact group $\AmenableGroup$, then $U$ has discrete spectrum.[^7]
+
+[^7]: This $\AmenableGroup$ would be the compact group behind the factor subsystem of the larger system. For example, $\AmenableGroup=\mathbb{Z}$ for the irrational $\alpha$ group rotation would give us compact $G=\{z\in\mathbb{C}\mid|z|=1\}$. The homomorphism from $\AmenableGroup\rightarrow \Group$ is $n\mapsto e^{2\pi i\alpha n}$.
+
+::: {#exr-AmenableAbstractMeanErgodic}
+
+Show that
+$$\HilbertSpace=\HilbertSpace_\text{ds}\oplus \HilbertSpace_\text{wm} $$
+and what happens to $\HilbertSpace_\text{ds}$ and $\HilbertSpace_\text{wm}$ when it is averaged by the Abstract Mean Ergodic Theorem for amenable groups.[^8]
+
+[^8]: (Proposition 5.3.3)$$\HilbertSpace_\text{wm}=\left\{f\in \HilbertSpace\mid \lim_{N\rightarrow\infty}\frac{1}{|\Folner[N]|}\sum_{\varphi\in\Folner[N]}|(U_\varphi f\mid f)|^2=0  \right\}. $$
+
+:::
+
+::: {#prp-DSInvariantMarkov}
+
+Let $(X,T)$ be a measure-preserving system. Then $\text{L}^2(X)_\text{ds}$ is an invariant Markov sublattice of $\text{L}^2(X)$.
+
+:::
+
+::: {#exr-ISem28exr6112}
+## [[@ISem28, Lemma 6.1.12]]{.no-paren}
+
+Assume that $U:\AmenableGroup\rightarrow\mathscr{U}(\HilbertSpace)$ is a strongly continuous unitary representation of a discrete group $\AmenableGroup$. Let further $P$ be the orthogonal projection onto the fixed space $\text{fix}(U(\AmenableGroup))$. Then $(Pf\mid g)=\lim_{N\rightarrow\infty}\frac{1}{|\Folner[N]|}\sum_{\AmenableGroupElement\in\Folner[N]}(U_\AmenableGroupElement f\mid g)$ for all $f,g\in\HilbertSpace$.
+
+:::

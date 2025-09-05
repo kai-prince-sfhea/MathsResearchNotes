@@ -2,6 +2,7 @@
 title: Furstenberg's Correspondence Principle
 terms:
   - term: Furstenberg's Correspondence Principle
+    regex: "Furstenberg's [Cc]orrespondence [Pp]rinciple"
     abbreviation: FCP
     id: thm-FCP
     translate: false
@@ -23,7 +24,7 @@ macros:
 ---
 
 ::: {#thm-FCP}
-## cf. @kra2022infinite [Theorem 2.10]
+## [[cf. @kra2022infinite, Theorem 2.10]]{.no-paren}
 
 Let $\AmenableGroup$ be an amenable group, $A\subset \AmenableGroup$, and $\Folner$ be a Følner sequence in $\AmenableGroup$ such that the limit
 $$\delta=\lim_{N\rightarrow\infty}\frac{\CountingMeasure{A\cap\Folner[N]}}{\CountingMeasure{\Folner[N]}}$$

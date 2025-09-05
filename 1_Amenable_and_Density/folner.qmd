@@ -68,7 +68,7 @@ This alternative definition will be useful when looking at proving some of the p
 # Tempered Følner Sequences
 
 ::: {#def-tempered}
-## @Lindenstrauss2001PETAmenable [Definition 1.1]
+## [[@Lindenstrauss2001PETAmenable, Definition 1.1]]{.no-paren}
 
 A sequence of sets $\Folner=(\Folner[N])_{N\in\mathbb{N}}$ will be said to be *tempered* if, for some $b>0$ and all $n\in\mathbb{N}$,
 
@@ -80,7 +80,7 @@ is referred to as the *Shulman condition*.
 :::
 
 ::: {#prp-temperedFolner}
-## @Lindenstrauss2001PETAmenable [Proposition 1.4]
+## [[@Lindenstrauss2001PETAmenable, Proposition 1.4]]{.no-paren}
 
 1. Every Følner sequence $\Folner=(\Folner[N])_{N\in\mathbb{N}}$ has a tempered subsequence.
 2. Every amenable group has a tempered Følner sequence.

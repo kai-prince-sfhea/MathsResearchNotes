@@ -1,0 +1,43 @@
+---
+title: Kronecker Factor
+terms:
+  - term: Kronecker
+    id: def-KroneckerFactor
+    translate: false
+    associatedMacros:
+    - command: KroneckerSpace
+      macro: '{Z}'
+    - command: KroneckerSpaceElement
+      macro: '{z}'
+    - command: KroneckerAction
+      macro: '{H}'
+    - command: KroneckerMeasure
+      macro: '{m_Z}'
+    - command: KroneckerFactor
+      macro: '{(\\KroneckerSpace,\\KroneckerMeasure,\\KroneckerAction)}'
+---
+
+::: {#def-KroneckerFactor}
+## [[@ISem28, Definition 7.1.14 & Subsection 13.3]]{.no-paren}
+
+Let $(X,T)$ be a measure-preserving system. We then write $J_\text{kro}:(X_\text{kro},T_\text{kro})\rightarrow(X,T)$ for the extension $J_E:(X_E,T_E)\rightarrow(X,T)$ defined by the invariant Markov sublattice $E=\text{L}^2(X)_\text{ds}$ and call $(X_\text{kro},T_\text{kro})$ the **Kronecker subsystem** of $(X,T)$.
+
+We refer to $(X_\text{kro},\Topology_\text{kro})$ as the *Kronecker factor* of the system $(X,\Topology)$.
+
+:::
+
+::: {#prp-KroneckerGeneric}
+## [[cf. @host2019short, Proposition 5]]{.no-paren}
+
+Let $(X,\AmenableGroup)$ be a topological dynamical system where $\AmenableGroup$ is an amenable group, $x_0\in X$, and $\Measure$ be an ergodic invariant probability measure supported on the closed orbit of $x_0$ under the action of $\AmenableGroup$.
+
+Let $\KroneckerFactor$ be the *Kronecker factor* of $(X,\Measure,\AmenableGroup)$, with factor map $\ProjectionMap:X\rightarrow\KroneckerSpace$.
+
+Let $X\times\KroneckerSpace$ be endowed with the group action of $\AmenableGroup\times\KroneckerAction$. Let $\tilde\Measure$ be the measure on $X\times\KroneckerSpace$ and image of $\Measure$ under the map $X\rightarrow X\times\KroneckerSpace$ where $x\mapsto(x,\ProjectionMap(x))$.
+
+Then there exists a Følner sequence $\tilde{\Folner}$ and a point $\KroneckerSpaceElement_0\in\KroneckerSpace$ such that $(x_0,\KroneckerSpaceElement_0)$ is generic for $\tilde{\Measure}$ along $\tilde{\Folner}$.
+
+:::
+
+The sources given by @host2019short for this result were @kra2007uniformity[Proposition 6.1] and @Host2018NilpotentSI[Proposition 24.3].
+

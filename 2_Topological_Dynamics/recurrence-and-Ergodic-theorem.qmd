@@ -10,7 +10,7 @@ terms:
 ---
 
 ::: {#thm-recurrence}
-## @Bergelson1985Recurrence [Theorem 1.1]
+## [[@Bergelson1985Recurrence, Theorem 1.1]]{.no-paren}
 
 Let $(X,\SigmaAlgebra{B},\Measure)$ be a probability space and suppose that $B_n\in\SigmaAlgebra{B}$ such that $\Measure(B_n)=b>0$ for all $n\in\mathbb{N}$.
 
@@ -19,8 +19,19 @@ $$\Measure\left(\bigcap_{i\in F}B_i \right)>0. $$
 
 :::
 
+::: {#thm-PoincareRecurrence}
+## Poincaré Recurrence for Upper Density
+
+Let $\Monoid$ be a countably-infinite amenable group with $\Folner$ as a Følner sequence. For all $B\in\mathcal{P}(\Group)$ such that $\Density{B}>0$, there exists $\GroupElement\in\Group$ such that $\UpperDensity{B\cap \GroupOperation{\GroupElement}{B}}>0$.
+
+:::
+
+This can be proved by using Furstenberg's Correspondence Principle with $B$ as our subset and, as $\Measure$ is measure-preserving in our Furstenberg system and by using [the invariance of density](..\1_Amenable_and_Density\density.qmd#prp-DensityTranslationInvariance), we can show that
+$$\Density{B}=\Measure(E)=\Measure(\GroupAction{\GroupElement}{E})=\Density(\GroupOperation{\GroupElement}{B})$$
+for all $\GroupElement\in\Group$. By defining an infinite series $E_n=\GroupAction{g_n}{E}$ and knowing that $\Measure(E_n)>0$ for all $n\in\N$, we can use @thm-recurrence to arrive at the result that $\Measure(\GroupAction{h}{B}\cap \GroupAction{h'}{B})>0$ for some $h,h'\in\Group$. By using the fact that $\Measure$ is measure-preserving again and using the properties of $\Measure$ as a result of its construction in Furstenberg's Correspondence Principle, we conclude that $\UpperDensity(B\cap\GroupOperation{g}{B})>0$ for some $\GroupElement\in\Group$
+
 ::: {#thm-GeneralisedPET}
-## cf. @Lindenstrauss2001PETAmenable [Theorem 1.2]
+## [[cf. @Lindenstrauss2001PETAmenable, Theorem 1.2]]{.no-paren}
 
 Let $\AmenableGroup$ be a discrete amenable group acting on a measure space $(X,\SigmaAlgebra{B},\Measure)$ by measure preserving transformation and let $\Folner=(\Folner[N])_{N\in\mathbb{N}}$ be a tempered Følner sequence.
 
@@ -33,8 +44,20 @@ for $\Measure$ almost every $x$.
 :::
 
 ::: {#cor-temperedGeneric}
-## cf. @host2019short [Corollary 8]
+## [[cf. @host2019short, Corollary 8]]{.no-paren}
 
 Let $(X,\AmenableGroup)$ be a topological dynamical system where $\AmenableGroup$ is an amenable group, $\Measure$ an ergodic measure on $X$ and $\Folner$ a tempered Følner sequence. Then $\Measure$-almost every $x\in X$ is generic for $\Measure$ along $\Folner$.
+
+:::
+
+::: {#thm-AbstractMeanErgodic}
+## [[@ISem28, Abstract Mean Ergodic Theorem]]{.no-paren}
+
+For every contraction semi-group $\mathscr{S}\subseteq\mathscr{L}(H)$ on a Hilbert space $H$, we have an orthogonal decomposition
+$$H=\text{fix}(\mathscr{S})\oplus\overline{\text{lin}}\bigcup_{U\in\mathscr{S}}(\text{Id}_H-U)(H).$$
+Moreover, the orthogonal projection $P$ onto $\text{fix}(\mathscr{S})$ has the following properties:
+
+1. $PU=UP=P$ for every $U\in\mathscr{S}$.
+2. For every $f\in H$, the vector $Pf\in H$ is the unique element of $\overline{\text{co}}\{Uf\mid U\in\mathscr{S}\}$ of minimal norm.
 
 :::
